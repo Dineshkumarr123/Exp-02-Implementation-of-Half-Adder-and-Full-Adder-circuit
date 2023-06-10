@@ -55,12 +55,28 @@ RTL realization
 
 
 ###HALFADDER
-![Screenshot 2023-04-05 144001](https://user-images.githubusercontent.com/130551452/231509409-aa50f8ee-386e-44d4-ae58-d77ceead0350.png)
+Program
+```
+module Halfadder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,carry);
+and(carry,a,b);
+endmodule
+```
 ![Screenshot (25)](https://user-images.githubusercontent.com/130551452/231508922-91978d61-4c7d-486c-9968-4898501194fe.png)
 ![Screenshot (26)](https://user-images.githubusercontent.com/130551452/231509043-24cfa0ed-d6c5-4ac6-8f44-84298535c659.png)
 
 ###FULLADDER
-![Screenshot 2023-04-05 215228](https://user-images.githubusercontent.com/130551452/231509679-a9a2e30f-2da6-4b17-9c49-e7d6f263e8e1.png)
+Program
+```
+module Fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum=((a^b)^c);
+assign carry=((a&b)|(b&c)|(c&a));
+endmodule
+```
 ![Screenshot 2023-04-05 215251](https://user-images.githubusercontent.com/130551452/231509770-63caeff3-c83b-4e29-bdea-3300ff3adaa7.png)
 ![Screenshot (27)](https://user-images.githubusercontent.com/130551452/231509824-1954a232-43f6-4bbd-a5d9-7d5ef3757435.png)
 ### Result:
